@@ -1,0 +1,7 @@
+flask==3.1.2
+flask-cors==4.0.0
+pymongo==4.8.0
+python-dotenv==1.0.0
+sib-api-v3-sdk==7.6.0
+pymupdf==1.24.5
+pandas==2.2.2

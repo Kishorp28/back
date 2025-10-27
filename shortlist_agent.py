@@ -2,7 +2,7 @@
 from pymongo import MongoClient
 
 def save_to_db(candidate_data, match_score, is_shortlisted, job_id=None):
-    client = MongoClient('mongodb://localhost:27017/')
+    client = MongoClient('mongodb+srv://itsmekishore28:itsmekishore28@cluster0.epss3og.mongodb.net/')
     db = client['recruitai']
     candidates = db['candidates']
     candidates.insert_one({
@@ -12,4 +12,4 @@ def save_to_db(candidate_data, match_score, is_shortlisted, job_id=None):
         'shortlisted': 'Yes' if is_shortlisted else 'No',
         'email_sent': False,  # New field
         'job_id': job_id
-    })
+    })

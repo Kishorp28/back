@@ -33,5 +33,5 @@ def send_email(name, recipient_email, job_title):
         print(f"✅ Email sent to {recipient_email}")
         return "Email sent successfully"
     except ApiException as e:
-        print(f"❌ Exception while sending to {recipient_email}: {e}")
-        return str(e)
+        print(f"❌ Exception while sending to {recipient_email}: {e.body}")
+        return e.body

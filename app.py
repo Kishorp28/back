@@ -14,13 +14,14 @@ from bson.objectid import ObjectId
 load_dotenv()  # Load environment variables from .env file
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": os.getenv('FRONTEND_URL', 'http://localhost:5173')}})
 
 # MongoDB Connection
-client = MongoClient('mongodb://localhost:27017/')
+client = MongoClient(os.getenv('MONGODB_URI', 'mongodb+srv://itsmekishore28:itsmekishore28@cluster0.epss3og.mongodb.net/'))
 db = client['recruitai']
 jd_collection = db['jd']
 candidates_collection = db['candidates']
+print("connected to database")
 
 @app.route('/upload-jd', methods=['POST'])
 def upload_jd():
