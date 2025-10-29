@@ -14,7 +14,17 @@ from bson.objectid import ObjectId
 load_dotenv()  # Load environment variables from .env file
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": os.getenv('FRONTEND_URL', 'http://localhost:5173')}})
+CORS(app, resources={
+    r"/*": {
+        "origins": [
+            "https://main.dh0y3nbowuz8p.amplifyapp.com",
+            "http://localhost:5173",
+            "http://localhost:3000"
+        ],
+        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        "allow_headers": ["Content-Type", "Authorization"]
+    }
+})
 
 # MongoDB Connection
 client = MongoClient(os.getenv('MONGODB_URI', 'mongodb+srv://itsmekishore28:itsmekishore28@cluster0.epss3og.mongodb.net/'))
