@@ -12,3 +12,4 @@ requests==2.31.0
 gunicorn==21.2.0
 werkzeug==3.0.1
 python-multipart==0.0.9
+sib_api_v3_sdk==7.6.0
