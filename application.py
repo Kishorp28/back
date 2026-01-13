@@ -19,7 +19,7 @@ app = Flask(__name__)
 # PROPER CORS Configuration
 CORS(app, resources={
     r"/*": {
-        "origins": ["https://main.d1sj18xuk9hyn7.amplifyapp.com", "http://localhost:5173"],
+        "origins": ["https://recurit.netlify.app", "http://localhost:5173"],
         "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
         "allow_headers": ["Content-Type", "Authorization", "X-Requested-With"]
     }
